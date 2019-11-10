@@ -41,7 +41,8 @@ public class Movement : MonoBehaviour
 
         if (word == "right")
         {
-            rb.AddForce(-speed * Time.deltaTime * 1000, 0, 0) ;
+            //rb.AddForce(-speed * Time.deltaTime * 1000, 0, 0) ;
+            rb.AddForce(0, speed * Time.deltaTime * 1000, 0);
             Debug.Log("Succes");
             word = "";
         }
