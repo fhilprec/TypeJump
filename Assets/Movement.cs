@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     public int speed = 10;
     public Rigidbody rb;
     private string word = "";
+    public GameObject text;
 
     // Start is called before the first frame update
     void Start()
@@ -17,29 +18,10 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(word);
-        if (Input.GetKeyDown("r"))
-        {
-            word += "r";
-        }
-        if (Input.GetKeyDown("i"))
-        {
-            word += "i";
-        }
-        if (Input.GetKeyDown("g"))
-        {
-            word += "g";
-        }
-        if (Input.GetKeyDown("h"))
-        {
-            word += "h";
-        }
-        if (Input.GetKeyDown("t"))
-        {
-            word += "t";
-        }
 
-        if (word == "right")
+        Debug.Log(word);
+        
+            if (word == "right")
         {
             //rb.AddForce(-speed * Time.deltaTime * 1000, 0, 0) ;
             rb.AddForce(0, speed * Time.deltaTime * 1000, 0);
@@ -48,7 +30,7 @@ public class Movement : MonoBehaviour
         }
         if(word.Length > 5)
         {
-            word = "";
+            text.GetComponent<TextAsset>().text.Insert(0, "");
         }
         if (Input.GetKey("o")) { word = ""; }
     }
