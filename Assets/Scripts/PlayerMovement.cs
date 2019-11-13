@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
     {
         cuberb = gameObject.GetComponent<Rigidbody>();
         cuberb.transform.position += new Vector3(0, 0, 30);
-        jumptime = 3;
         
     }
 
@@ -102,7 +101,6 @@ public class PlayerMovement : MonoBehaviour
             word = "";
             InputField.GetComponent<InputField>().text = "";
             cuberb.AddForce(0, 10000f * Time.deltaTime * power, 0) ;
-            jumptime = 0;
         }
         else if(word.Length >= 5 || word == "left" && gameObject.transform.position.x < -1.9f)
         {
