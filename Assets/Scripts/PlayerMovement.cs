@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody cuberb;
     [Range(0.5f,5f)]
     public float speed;
-    public float jumptime = 3;
     public float power;
     private string word = "";
     public GameObject FadeOut;
@@ -23,13 +22,13 @@ public class PlayerMovement : MonoBehaviour
     {
         cuberb = gameObject.GetComponent<Rigidbody>();
         cuberb.transform.position += new Vector3(0, 0, 30);
+        jumptime = 3;
         
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        jumptime += Time.deltaTime;
         time += Time.deltaTime;
         tempInput.GetComponent<InputField>().Select();
 
@@ -95,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
             InputField.GetComponent<InputField>().text = "";
             cuberb.transform.position += new Vector3(-1, 0, 0);
         }
-        else if (word == "jump" && jumptime > 3f )
+        else if (word == "jump" && cuberb.transform.position.y < 0.1f )
         {
             FadeOut.GetComponent<InputField>().text = word;
             FadeOut.GetComponent<Animator>().Play(0);
