@@ -467,7 +467,7 @@ Transform:
   m_GameObject: {fileID: 1079346442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.38, z: 0.5}
-  m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children:
   - {fileID: 1308914701}
   m_Father: {fileID: 0}
@@ -486,7 +486,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.8
-  jumptime: 0
   power: 3
   FadeOut: {fileID: 1087956734}
   tempInput: {fileID: 1765965159}
@@ -1084,10 +1083,13 @@ MonoBehaviour:
     type: 3}
   Obstacle_big: {fileID: 6345810240908430318, guid: 26e7918c3e852b3499cc906f10c72ce2,
     type: 3}
+  mods:
+  - {fileID: 7104491220770327084, guid: 9497e4a03539f5344a6348b4bfcf7511, type: 3}
   interval: 30
   spawnrange: 5
   chance: 0.5
   bigchance: 1
+  modchance: 1
 --- !u!4 &1700281657
 Transform:
   m_ObjectHideFlags: 0

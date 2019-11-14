@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject tempInput;
     private bool clear = false;
     private float time;
+    private int pos = 0;
 
 
 
@@ -40,19 +41,35 @@ public class PlayerMovement : MonoBehaviour
             ChangePosition(tempInput);
 
         }
-        
+
+        //guarantees that the x-position is an integer value;
+        cuberb.transform.position = new Vector3(pos, cuberb.transform.position.y, cuberb.transform.position.z);
+
+
+
     }
+
+
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Obstacle")
+        if (collision.collider.tag == "Obstacle")
         {
-            Debug.Log("Bam");
             gameObject.GetComponent<MeshRenderer>().enabled = false;
             speed = 0;
 
             //Hier Neustart Screen starten
 
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider collision) 
+    {
+        if(collision.gameObject.tag == "ModSpeedUp")
+        {
+            Debug.Log("PowerUp Gesammelt");
+            collision.gameObject.SetActive(false);
         }
     }
 
@@ -78,20 +95,20 @@ public class PlayerMovement : MonoBehaviour
         {
             FadeOut.GetComponent<InputField>().text = word;
             FadeOut.GetComponent<Animator>().Play(0);
-
+            pos++;
             word = "";
             InputField.GetComponent<InputField>().text = "";
-            cuberb.transform.position += new Vector3(1, 0, 0);
+            
             
         }
         else if (word == "left" && gameObject.transform.position.x >= -1.9f)
         {
             FadeOut.GetComponent<InputField>().text = word;
             FadeOut.GetComponent<Animator>().Play(0);
-
+            pos--;
             word = "";
             InputField.GetComponent<InputField>().text = "";
-            cuberb.transform.position += new Vector3(-1, 0, 0);
+
         }
         else if (word == "jump" && cuberb.transform.position.y < 0.1f )
         {
@@ -111,6 +128,8 @@ public class PlayerMovement : MonoBehaviour
             InputField.GetComponent<InputField>().text = "";
         }
 
+
+        
 
     }
 
