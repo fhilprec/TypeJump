@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 149817012398264131}
   - component: {fileID: 100446671241830722}
   - component: {fileID: 4469542508827190447}
-  - component: {fileID: 2512231514565539666}
+  - component: {fileID: 676954448335026618}
   m_Layer: 0
   m_Name: ModSpeedUp
   m_TagString: ModSpeedUp
@@ -92,7 +92,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &2512231514565539666
+--- !u!95 &676954448335026618
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0

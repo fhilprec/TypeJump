@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject.tag == "ModSpeedUp")
         {
             Debug.Log("PowerUp Gesammelt");
-            collision.gameObject.SetActive(false);
+            //start Animation
         }
     }
 
