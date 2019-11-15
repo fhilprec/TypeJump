@@ -71,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
             //start Animation
             //collision.gameObject.GetComponent<Animator>().
         }
+        GetComponent<Animator>().Play(m_Playable);
     }
 
     public void ChangePosition(GameObject InputField)
