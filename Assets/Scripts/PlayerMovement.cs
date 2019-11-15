@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody cuberb;
-    [Range(0.5f,5f)]
+    [Range(0f,5f)]
     public float speed;
     public float power;
     private string word = "";
@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private bool clear = false;
     private float time;
     private int pos = 0;
-
+    public AnimationClip PickUp;
 
 
     // Start is called before the first frame update
@@ -57,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
         {
             gameObject.GetComponent<MeshRenderer>().enabled = false;
             speed = 0;
-
             //Hier Neustart Screen starten
 
         }
@@ -70,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("PowerUp Gesammelt");
             //start Animation
+            //collision.gameObject.GetComponent<Animator>().
         }
     }
 
