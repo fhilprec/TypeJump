@@ -45,8 +45,18 @@ public class Spawn_Obstacles : MonoBehaviour
                 }
                 else if (Random.Range(0f, 1f) < modchance)
                 {
-                    GameObject obs = GameObject.Instantiate(mods[0]) as GameObject;
-                    obs.transform.position = new Vector3(0, 0.75f, interval * 2 + i * interval) + new Vector3(0, 0, (int)Player.transform.position.z) + new Vector3(j - 2, 0, 0);
+                    if(Random.Range(0f,1f) > 0.5f)
+                    {
+                        GameObject obs = GameObject.Instantiate(mods[0]) as GameObject;
+                        obs.transform.position = new Vector3(0, 0.75f, interval * 2 + i * interval) + new Vector3(0, 0, (int)Player.transform.position.z) + new Vector3(j - 2, 0, 0);
+
+                    }
+                    else
+                    {
+                        GameObject obs = GameObject.Instantiate(mods[1]) as GameObject;
+                        obs.transform.position = new Vector3(0, 0.75f, interval * 2 + i * interval) + new Vector3(0, 0, (int)Player.transform.position.z) + new Vector3(j - 2, 0, 0);
+
+                    }
 
                 }
             }

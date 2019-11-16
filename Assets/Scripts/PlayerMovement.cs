@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
     public AnimationClip PickUp;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         cuberb = gameObject.GetComponent<Rigidbody>();
@@ -26,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         time += Time.deltaTime;
@@ -63,35 +61,48 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    //Collision detection for Powerups
     private void OnTriggerEnter(Collider collision) 
     {
         if(collision.gameObject.tag == "ModSpeedUp")
         {
-            Debug.Log("PowerUp Gesammelt");
-            //start Animation
-            //collision.gameObject.GetComponent<Animator>().
+            //Switch the animation
+            collision.gameObject.GetComponent<Animator>().SetBool("PickedUp", true);
+            collision.gameObject.GetComponent<FadeOut>().startFadind();
+            speed *= 1.25f;
         }
-        GetComponent<Animator>().Play(m_Playable);
+        if (collision.gameObject.tag == "ModSpeedDown")
+        {
+            Debug.Log(" Green didI did run");
+            //Switch the animation
+            collision.gameObject.GetComponent<Animator>().SetBool("PickedUp", true);
+            collision.gameObject.GetComponent<FadeOut>().startFadind();
+            speed *= 0.8f;
+        }
+
     }
 
+    
     public void ChangePosition(GameObject InputField)
     { 
+        //reset Time if things are written
         time = 0;
+        //needed if words should be cleared after 0.75 sec
         if (clear)
         {
             clear = false;
-            if(word != "") { Debug.Log(word[word.Length - 1]); }
-            
             word = "";
             InputField.GetComponent<InputField>().text = word;
             FadeOut.GetComponent<InputField>().text = word;
         }
 
-
+        //Start the Fading animation
         InputField.GetComponent<Animator>().Play(0);
 
         word = InputField.GetComponent<InputField>().text;
 
+
+        //Following if conditions start the animation of the second FadeOutField, delete the old word and move the cube
         if(word == "right" && gameObject.transform.position.x <= 1.9f)
         {
             FadeOut.GetComponent<InputField>().text = word;

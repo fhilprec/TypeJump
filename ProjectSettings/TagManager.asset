@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - ModSpeedUp
+  - ModSpeedDown
   layers:
   - Default
   - TransparentFX
