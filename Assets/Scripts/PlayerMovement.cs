@@ -73,7 +73,6 @@ public class PlayerMovement : MonoBehaviour
         }
         if (collision.gameObject.tag == "ModSpeedDown")
         {
-            Debug.Log(" Green didI did run");
             //Switch the animation
             collision.gameObject.GetComponent<Animator>().SetBool("PickedUp", true);
             collision.gameObject.GetComponent<FadeOut>().startFadind();
