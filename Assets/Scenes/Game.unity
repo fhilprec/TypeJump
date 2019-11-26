@@ -756,12 +756,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
-  power: 1.5
+  power: 1.3
   FadeOut: {fileID: 1087956734}
   tempInput: {fileID: 1765965159}
   PickUp: {fileID: 7400000, guid: 3edd8d7e2dbd2684982d273a3e3fe011, type: 2}
   RoboMesh: {fileID: 149518019}
   BigExplosion: {fileID: 1847312036}
+  transitionspeed: 7
 --- !u!1 &1087956734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,8 +1399,8 @@ MonoBehaviour:
     fastMode: 1
     keepAlpha: 0
   fog:
-    enabled: 1
-    excludeSkybox: 1
+    enabled: 0
+    excludeSkybox: 0
   debugLayer:
     lightMeter:
       width: 512
@@ -1422,8 +1423,8 @@ MonoBehaviour:
       colorBlindnessType: 0
       colorBlindnessStrength: 1
   m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
+  m_ShowToolkit: 1
+  m_ShowCustomSorter: 1
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []

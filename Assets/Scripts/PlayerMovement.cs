@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject RoboMesh;
     public GameObject BigExplosion;
     public float transitionspeed;
+    private float transitionclock;
 
 
     void Start()
@@ -30,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        transitionclock += Time.deltaTime;
         time += Time.deltaTime;
         tempInput.GetComponent<InputField>().Select();
 
@@ -40,7 +42,13 @@ public class PlayerMovement : MonoBehaviour
         {
             clear = true;
             ChangePosition(tempInput);
+        }
 
+        if (transitionclock > 0.01f)    //change this if you change the animations playspeed should be variable in the future
+        {
+            RoboMesh.gameObject.GetComponent<Animator>().SetBool("MoveRight", false);
+            RoboMesh.gameObject.GetComponent<Animator>().SetBool("MoveLeft", false);
+            RoboMesh.gameObject.GetComponent<Animator>().SetBool("Jump", false);
         }
 
         //guarantees that the x-position is an integer value;
@@ -114,8 +122,11 @@ public class PlayerMovement : MonoBehaviour
             pos++;
             word = "";
             InputField.GetComponent<InputField>().text = "";
-            
-            
+            RoboMesh.gameObject.GetComponent<Animator>().SetBool("MoveRight", true);
+            transitionclock = 0f;
+
+
+
         }
         else if (word == "left" && gameObject.transform.position.x >= -1.9f)
         {
@@ -124,6 +135,8 @@ public class PlayerMovement : MonoBehaviour
             pos--;
             word = "";
             InputField.GetComponent<InputField>().text = "";
+            RoboMesh.gameObject.GetComponent<Animator>().SetBool("MoveLeft", true);
+            transitionclock = 0f;
 
         }
         else if (word == "jump" && cuberb.transform.position.y < 0.1f )
@@ -134,6 +147,7 @@ public class PlayerMovement : MonoBehaviour
             word = "";
             InputField.GetComponent<InputField>().text = "";
             cuberb.AddForce(0, 10000f * Time.deltaTime * power, 0) ;
+            RoboMesh.gameObject.GetComponent<Animator>().SetBool("Jump", true);
         }
         else if(word.Length >= 5 || word == "left" && gameObject.transform.position.x < -1.9f)
         {
