@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private string word = "";
     public GameObject FadeOut;
     public GameObject tempInput;
+    public GameObject GameManager;
     private bool clear = false;
     private float time;
     private int pos = 0;
@@ -67,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
             gameObject.GetComponent<MeshRenderer>().enabled = false;
             RoboMesh.SetActive(false);
             BigExplosion.SetActive(true);
+
             speed = 0;
             //Hier Neustart Screen starten
 
