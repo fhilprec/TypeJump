@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public AnimationClip PickUp;
     public GameObject RoboMesh;
     public GameObject BigExplosion;
+    public float transitionspeed;
 
 
     void Start()
@@ -43,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //guarantees that the x-position is an integer value;
-        cuberb.transform.position = new Vector3(pos, cuberb.transform.position.y, cuberb.transform.position.z);
+        cuberb.transform.position = new Vector3(Mathf.Lerp(cuberb.transform.position.x, pos,transitionspeed * Time.deltaTime), cuberb.transform.position.y, cuberb.transform.position.z);
 
 
 
