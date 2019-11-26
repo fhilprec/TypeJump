@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     private float time;
     private int pos = 0;
     public AnimationClip PickUp;
+    public GameObject RoboMesh;
+    public GameObject BigExplosion;
 
 
     void Start()
@@ -54,6 +56,8 @@ public class PlayerMovement : MonoBehaviour
         if (collision.collider.tag == "Obstacle")
         {
             gameObject.GetComponent<MeshRenderer>().enabled = false;
+            RoboMesh.SetActive(false);
+            BigExplosion.SetActive(true);
             speed = 0;
             //Hier Neustart Screen starten
 
