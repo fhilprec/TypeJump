@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody cuberb;
+    private bool once = true;
     [Range(0f,5f)]
     public float speed;
     public float power;
@@ -22,18 +23,49 @@ public class PlayerMovement : MonoBehaviour
     public float transitionspeed;
     private float transitionclock;
 
+    public GameObject TextUp;
+    public GameObject TextLeft;
+    public GameObject TextRight;
+    public string left, right, up;
+
+
+    private void firstchange()
+    {
+        left = GameManager.GetComponent<TextImport>().changeWord(TextLeft);
+        GameManager.GetComponent<TextImport>().left = left;
+        right = GameManager.GetComponent<TextImport>().changeWord(TextRight);
+        GameManager.GetComponent<TextImport>().left = right;
+        up = GameManager.GetComponent<TextImport>().changeWord(TextUp);
+        GameManager.GetComponent<TextImport>().left = up;
+
+
+
+
+    }
 
     void Start()
     {
         cuberb = gameObject.GetComponent<Rigidbody>();
+        cuberb.freezeRotation  = true;
         cuberb.transform.position += new Vector3(0, 0, 30);
+
+
         
+
+
     }
 
     void FixedUpdate()
     {
+        if (once)
+        {
+            firstchange();
+            once = false;
+        }
+
         transitionclock += Time.deltaTime;
         time += Time.deltaTime;
+        tempInput.GetComponent<InputField>().ActivateInputField();
         tempInput.GetComponent<InputField>().Select();
 
 
@@ -117,7 +149,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         //Following if conditions start the animation of the second FadeOutField, delete the old word and move the cube
-        if(word == "right" && gameObject.transform.position.x <= 1.9f)
+        if(word == right && pos < 2)
         {
             FadeOut.GetComponent<InputField>().text = word;
             FadeOut.GetComponent<Animator>().Play(0);
@@ -126,11 +158,14 @@ public class PlayerMovement : MonoBehaviour
             InputField.GetComponent<InputField>().text = "";
             RoboMesh.gameObject.GetComponent<Animator>().SetBool("MoveRight", true);
             transitionclock = 0f;
+            right = GameManager.GetComponent<TextImport>().changeWord(TextRight);
+
 
 
 
         }
-        else if (word == "left" && gameObject.transform.position.x >= -1.9f)
+
+        else if (word == left && pos > -2)
         {
             FadeOut.GetComponent<InputField>().text = word;
             FadeOut.GetComponent<Animator>().Play(0);
@@ -139,9 +174,11 @@ public class PlayerMovement : MonoBehaviour
             InputField.GetComponent<InputField>().text = "";
             RoboMesh.gameObject.GetComponent<Animator>().SetBool("MoveLeft", true);
             transitionclock = 0f;
+            left = GameManager.GetComponent<TextImport>().changeWord(TextLeft);
+
 
         }
-        else if (word == "jump" && cuberb.transform.position.y < 0.1f )
+        else if (word == up && cuberb.transform.position.y < 0.1f )
         {
             FadeOut.GetComponent<InputField>().text = word;
             FadeOut.GetComponent<Animator>().Play(0);
@@ -150,8 +187,10 @@ public class PlayerMovement : MonoBehaviour
             InputField.GetComponent<InputField>().text = "";
             cuberb.AddForce(0, 10000f * Time.deltaTime * power, 0) ;
             RoboMesh.gameObject.GetComponent<Animator>().SetBool("Jump", true);
+            up = GameManager.GetComponent<TextImport>().changeWord(TextUp);
+
         }
-        else if(word.Length >= 5 || word == "left" && gameObject.transform.position.x < -1.9f)
+        else if(word.Length >= 20)
         {
             FadeOut.GetComponent<InputField>().text = word;
             FadeOut.GetComponent<Animator>().Play(0);
