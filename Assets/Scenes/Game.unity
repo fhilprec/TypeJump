@@ -986,7 +986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bddc87d3286c1446ab00b440613f6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 1
   power: 1.1
   FadeOut: {fileID: 1087956734}
   tempInput: {fileID: 1765965159}
@@ -1508,6 +1508,7 @@ GameObject:
   - component: {fileID: 1308914700}
   - component: {fileID: 1308914699}
   - component: {fileID: 1308914702}
+  - component: {fileID: 1308914703}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1640,6 +1641,15 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!45 &1308914703
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308914698}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 9f327c06f8120874aa029411cd0352cb, type: 2}
 --- !u!1 &1375003646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1837,7 +1847,7 @@ MonoBehaviour:
   spawnrange: 5
   chance: 0.5
   bigchance: 1
-  modchance: 1
+  modchance: 0.44
 --- !u!4 &1700281657
 Transform:
   m_ObjectHideFlags: 0
@@ -1962,8 +1972,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1079346442}
   maxWords: 1000
-  wordsmaxlength: 8
-  wordsminlength: 4
+  wordsmaxlength: 5
+  wordsminlength: 0
   left: 
   right: 
   jump: 

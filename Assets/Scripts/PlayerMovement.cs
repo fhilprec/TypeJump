@@ -116,14 +116,14 @@ public class PlayerMovement : MonoBehaviour
             //Switch the animation
             collision.gameObject.GetComponent<Animator>().SetBool("PickedUp", true);
             collision.gameObject.GetComponent<FadeOut>().startFadind();
-            speed *= 1.25f;
+            speed += 0.2f;
         }
         if (collision.gameObject.tag == "ModSpeedDown")
         {
             //Switch the animation
             collision.gameObject.GetComponent<Animator>().SetBool("PickedUp", true);
             collision.gameObject.GetComponent<FadeOut>().startFadind();
-            speed *= 0.8f;
+            speed -= 0.2f;
         }
 
     }
