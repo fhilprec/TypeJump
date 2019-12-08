@@ -953,7 +953,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079346442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.45, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0.03, z: 0.5}
   m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
   m_Children:
   - {fileID: 1803824517}
@@ -1562,7 +1562,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308914698}
   m_LocalRotation: {x: 0.07780641, y: -0, z: -0, w: 0.99696857}
-  m_LocalPosition: {x: 0, y: 2.97, z: -3.76}
+  m_LocalPosition: {x: 0, y: 2.37, z: -4.88}
   m_LocalScale: {x: 0.95, y: 80.27346, z: 0.79135317}
   m_Children:
   - {fileID: 119227395}
@@ -2157,11 +2157,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: cd21eaf026c9d28478734aabb6da1164, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1e-15
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: cd21eaf026c9d28478734aabb6da1164, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.56
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: cd21eaf026c9d28478734aabb6da1164, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2201,15 +2201,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: cd21eaf026c9d28478734aabb6da1164, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.16132706
+      value: 0.20619212
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: cd21eaf026c9d28478734aabb6da1164, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.16132706
+      value: 0.20619212
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: cd21eaf026c9d28478734aabb6da1164, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.16132706
+      value: 0.20619212
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: cd21eaf026c9d28478734aabb6da1164, type: 3}
       propertyPath: m_Materials.Array.data[0]
