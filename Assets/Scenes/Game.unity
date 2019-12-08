@@ -174,18 +174,6 @@ Transform:
   m_Father: {fileID: 1308914701}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &149518019 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100004, guid: cd21eaf026c9d28478734aabb6da1164,
-    type: 3}
-  m_PrefabInstance: {fileID: 1803695873}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &149518020 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400004, guid: cd21eaf026c9d28478734aabb6da1164,
-    type: 3}
-  m_PrefabInstance: {fileID: 1803695873}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &149518021
 Animator:
   serializedVersion: 3
@@ -193,13 +181,13 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 149518019}
+  m_GameObject: {fileID: 1803792805}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2ece5b862feba5c488519b69f1ccb2be, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -590,7 +578,7 @@ Transform:
   m_LocalPosition: {x: 0, y: -3.05, z: 0}
   m_LocalScale: {x: -2.3281, y: -2.3281, z: -2.3281}
   m_Children: []
-  m_Father: {fileID: 149518020}
+  m_Father: {fileID: 1803824517}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &796408995
@@ -965,10 +953,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079346442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.38, z: 0.5}
+  m_LocalPosition: {x: 0, y: 1.45, z: 0.5}
   m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
   m_Children:
-  - {fileID: 149518020}
+  - {fileID: 1803824517}
   - {fileID: 1847312037}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -991,7 +979,7 @@ MonoBehaviour:
   tempInput: {fileID: 1765965159}
   GameManager: {fileID: 1700281655}
   PickUp: {fileID: 7400000, guid: 3edd8d7e2dbd2684982d273a3e3fe011, type: 2}
-  RoboMesh: {fileID: 149518019}
+  RoboMesh: {fileID: 1803792805}
   BigExplosion: {fileID: 1847312036}
   transitionspeed: 10
   TextUp: {fileID: 949664305}
@@ -1332,7 +1320,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 149518020}
+    m_TransformParent: {fileID: 1803824517}
     m_Modifications:
     - target: {fileID: 1634767862067424, guid: 007c57e2df8e9b144b99f471b84f3d56, type: 3}
       propertyPath: m_Name
@@ -2173,11 +2161,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: cd21eaf026c9d28478734aabb6da1164, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.56
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: cd21eaf026c9d28478734aabb6da1164, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.4
+      value: -0.028
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: cd21eaf026c9d28478734aabb6da1164, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2237,6 +2225,18 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 70acd652979188e4899a1768b526ae95, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd21eaf026c9d28478734aabb6da1164, type: 3}
+--- !u!1 &1803792805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100004, guid: cd21eaf026c9d28478734aabb6da1164,
+    type: 3}
+  m_PrefabInstance: {fileID: 1803695873}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1803824517 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400004, guid: cd21eaf026c9d28478734aabb6da1164,
+    type: 3}
+  m_PrefabInstance: {fileID: 1803695873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1847312036 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664,
