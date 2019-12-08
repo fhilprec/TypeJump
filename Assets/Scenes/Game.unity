@@ -986,7 +986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bddc87d3286c1446ab00b440613f6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.53
   power: 1.1
   FadeOut: {fileID: 1087956734}
   tempInput: {fileID: 1765965159}
